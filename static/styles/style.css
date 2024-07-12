@@ -296,7 +296,7 @@
   position: relative;
   width: 320px;
   height: 453.55px;
-  background-image: url(./img/bg-2.png);
+  background-image: url(../img/bg-2.png);
   background-size: 100% 100%;
 }
 
@@ -339,7 +339,7 @@
 }
 
 .main-mobile .graphic-2 {
-  background-image: url(./img/bg-11.png);
+  background-image: url(../img/bg-11.png);
   position: relative;
   width: 320px;
   height: 453.55px;
@@ -347,7 +347,7 @@
 }
 
 .main-mobile .graphic-3 {
-  background-image: url(./img/bg-12.png);
+  background-image: url(../img/bg-12.png);
   position: relative;
   width: 320px;
   height: 453.55px;
@@ -355,7 +355,7 @@
 }
 
 .main-mobile .graphic-4 {
-  background-image: url(./img/bg-13.png);
+  background-image: url(../img/bg-13.png);
   position: relative;
   width: 320px;
   height: 453.55px;
@@ -593,7 +593,7 @@
     rgba(29.35, 21.13, 0, 0.7) 55.78%,
     rgb(0, 0, 0) 100%
   );
-  background-image: url(./img/image.jpg);
+  background-image: url(../img/image.jpg);
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
@@ -709,7 +709,7 @@
 .main-mobile .graphic-5 {
   width: 366.88px;
   height: 520px;
-  background-image: url(./img/bg-9.png);
+  background-image: url(../img/bg-9.png);
   position: relative;
   background-size: 100% 100%;
 }
@@ -849,7 +849,7 @@
 .main-mobile .graphic-6 {
   width: 366.88px;
   height: 520px;
-  background-image: url(./img/bg-7.png);
+  background-image: url(../img/bg-7.png);
   position: relative;
   background-size: 100% 100%;
 }
@@ -857,7 +857,7 @@
 .main-mobile .graphic-7 {
   width: 320px;
   height: 453.55px;
-  background-image: url(./img/bg-8.png);
+  background-image: url(../img/bg-8.png);
   position: relative;
   background-size: 100% 100%;
 }
@@ -865,7 +865,7 @@
 .main-mobile .graphic-8 {
   width: 366.88px;
   height: 520px;
-  background-image: url(./img/bg-17.png);
+  background-image: url(../img/bg-17.png);
   position: relative;
   background-size: 100% 100%;
 }
@@ -873,7 +873,7 @@
 .main-mobile .graphic-9 {
   width: 366.88px;
   height: 520px;
-  background-image: url(./img/bg-12.png);
+  background-image: url(../img/bg-12.png);
   position: relative;
   background-size: 100% 100%;
 }
