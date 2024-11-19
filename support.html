@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="twitter:card" content="photo" />
     <link rel="stylesheet" type="text/css" href="static/styles/fonts.css" />
     <link rel="stylesheet" type="text/css" href="static/styles/style.css" />
     <link rel="stylesheet" type="text/css" href="static/styles/styleguide.css" />
@@ -13,45 +12,69 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
         }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
         }
-        h1, h2 {
-            color: #333;
+
+        h1 {
+            font-size: 2rem;
+            color: #222;
+            text-align: center;
+            margin-top: 0;
         }
+
+        h2, h3 {
+            color: #444;
+            margin-top: 1.5rem;
+        }
+
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.2rem;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
         p {
-            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 0.9rem;
             color: #666;
         }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
+
         a {
-            color: #007BFF;
+            color: #0066cc;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #999;
         }
     </style>
 </head>
 <body>
-    <div class="container"></div>
+    <main>
         <h1>Destined App Support</h1>
         <p>Welcome to the support page for the Destined App. Here, you'll find answers to common questions and information to help you make the most of our app.</p>
 
@@ -76,31 +99,32 @@
 
         <h2>Contact Us</h2>
         <p>If you have any questions or need further assistance, please contact us at <a href="mailto:contact@destinedclub.com">contact@destinedclub.com</a>.</p>
+    </main>
 
-        <footer class="footer">
-            <div class="heading">
-              <div class="leading">
-                <div class="d-1 pinyonscript-normal-chicago-128px">D</div>
-              </div>
-              <div class="meta-13 meta-14">
-                <p class="location cormorantgaramond-semi-bold-storm-dust-16px">
-                  © 2024 Destined Club Oy. All rights reserved. Unauthorized
-                  use and/or duplication of this material without express
-                  and written permission from this site’s owner is strictly
-                  prohibited.
-                </p>
-              </div>
-              <div class="meta-13 meta-14">
-                <p
-                  class="location cormorantgaramond-semi-bold-storm-dust-16px"
-                >
-                  You can find our
-                  <a href="terms.html">Terms & Conditions</a> and
-                  <a href="privacy.html">Privacy Policy</a> here.
-                </p>
-              </div>
-            </div>
-        </footer>
-    </div>
+    <footer class="footer">
+        <div class="heading">
+          <div class="leading">
+            <div class="d-1 pinyonscript-normal-chicago-128px">D</div>
+          </div>
+          <div class="meta-13 meta-14">
+            <p class="location cormorantgaramond-semi-bold-storm-dust-16px">
+              © 2024 Destined Club Oy. All rights reserved. Unauthorized
+              use and/or duplication of this material without express
+              and written permission from this site’s owner is strictly
+              prohibited.
+            </p>
+          </div>
+          <div class="meta-13 meta-14">
+            <p
+              class="location cormorantgaramond-semi-bold-storm-dust-16px"
+            >
+              You can find our
+              <a href="terms.html">Terms & Conditions</a> and
+              <a href="privacy.html">Privacy Policy</a> here.
+            </p>
+          </div>
+        </div>
+    </footer>
+
 </body>
 </html>
