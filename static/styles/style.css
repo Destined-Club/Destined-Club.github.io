@@ -1,5 +1,9 @@
 /* screen - main-large */
 
+.download-container {
+  padding-top: 1em;
+}
+
 .main-large {
   align-items: center;
   background-color: var(--vista-white);
