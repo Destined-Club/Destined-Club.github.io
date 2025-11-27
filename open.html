@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="stylesheet" type="text/css" href="static/styles/fonts.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/globals.css">
+    <link rel="icon" href="/apple-touch-icon.png" type="image/x-icon">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Opening Destined App...">
+    <title>Open in Destined App</title>
+    <style>
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .loading-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .loading-subtext {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #666;
+        }
+        .app-store-link {
+            margin-top: 30px;
+        }
+        .app-store-link img {
+            height: 40px;
+        }
+    </style>
+</head>
+<body style="margin: 0; background: #ffffff">
+    <div class="loading-container">
+        <div class="loading-text">Opening Destined App...</div>
+        <div class="loading-subtext">If the app doesn't open, you will be redirected shortly.</div>
+        <div class="app-store-link">
+            <a href="https://apps.apple.com/app/id6736470532" target="_blank" rel="noopener">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                    alt="Download on the App Store">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Parse URL parameters
+            var urlParams = new URLSearchParams(window.location.search);
+            
+            // Determine the deep link type and ID
+            var deepLinkUrl = null;
+            
+            // Check for specific parameters: author, guide, destin
+            if (urlParams.has('author')) {
+                deepLinkUrl = 'destined://author/' + encodeURIComponent(urlParams.get('author'));
+            } else if (urlParams.has('guide')) {
+                deepLinkUrl = 'destined://guide/' + encodeURIComponent(urlParams.get('guide'));
+            } else if (urlParams.has('destin')) {
+                deepLinkUrl = 'destined://destin/' + encodeURIComponent(urlParams.get('destin'));
+            } else if (urlParams.has('type') && urlParams.has('id')) {
+                // Generic format: ?type=author&id=123
+                var type = urlParams.get('type');
+                var id = urlParams.get('id');
+                
+                // Only allow known types
+                if (type === 'author' || type === 'guide' || type === 'destin') {
+                    deepLinkUrl = 'destined://' + encodeURIComponent(type) + '/' + encodeURIComponent(id);
+                }
+            }
+            
+            // Configuration
+            var FALLBACK_TIMEOUT_MS = 2500;
+            
+            // Fallback URL - redirect to index page
+            var fallbackUrl = window.location.origin + '/';
+            
+            // If we have a valid deep link, try to open the app
+            if (deepLinkUrl) {
+                // Set up a timer to redirect to fallback if app doesn't open
+                var fallbackTimeout = setTimeout(function() {
+                    window.location.href = fallbackUrl;
+                }, FALLBACK_TIMEOUT_MS);
+                
+                // Listen for visibility change - if page becomes hidden, app likely opened
+                document.addEventListener('visibilitychange', function() {
+                    if (document.hidden) {
+                        clearTimeout(fallbackTimeout);
+                    }
+                });
+                
+                // Also listen for blur event as a backup
+                window.addEventListener('blur', function() {
+                    clearTimeout(fallbackTimeout);
+                });
+                
+                // Try to open the app
+                window.location.href = deepLinkUrl;
+            } else {
+                // No valid deep link parameters, redirect to index immediately
+                window.location.href = fallbackUrl;
+            }
+        })();
+    </script>
+</body>
+</html>
